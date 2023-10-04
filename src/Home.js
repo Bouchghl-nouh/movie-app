@@ -4,7 +4,7 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
 export function Home() {
-  const appUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=fe738b5f&s=pawn";
+  const appUrl = "http://www.omdbapi.com/?i=tt3896198&apikey=fe738b5f&s=spider";
   const [searchItem, setSearchItem] = useState();
   const [movies,setMovies] = useState([{}])
  useEffect(() => {
@@ -12,7 +12,7 @@ export function Home() {
  }, [])
   console.log(movies);
   function searchMovies(title) {
-    fetch(appUrl)
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=fe738b5f&s=${title?title:"spider"}`)
     .then(response => response.json())
     .then(data => setMovies(data.Search))
   }

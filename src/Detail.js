@@ -13,7 +13,6 @@ export function Detail() {
     .then(response => response.json())
     .then(data=>setMovie(data))
   }
-    console.log(movie);
     return (
         <div className="container">
             <div className="movie" key={movie.imdbID}>
